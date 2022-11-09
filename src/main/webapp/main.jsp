@@ -25,7 +25,7 @@
 				<div class="container-fluid col-sm-5">
 					<ul class="navbar-nav">
 						<li class="nav-item" style="padding-right: 70px;">
-					    	<a class="nav-link" href="#">모든 상품 보기</a>
+					    	<a class="nav-link" href="itemList.jsp">모든 상품 보기</a>
 					    </li>					
 						<li class="nav-item dropdown" style="padding-right: 70px;">
 							<a class="nav-link dropdown-toggle" href="#" role="button"	data-bs-toggle="dropdown">모든 행사 보기</a>
@@ -57,7 +57,7 @@
 				<div class="col-sm-2">
 					<button type="button" class="btn btn-primary" onclick="location.href='login.jsp'">로그인</button>					
 					<!-- 관리자만 보이는 부분 -->
-					<button class="btn btn-info" onclick="#">관리 페이지로</button>					
+					<button class="btn btn-info" onclick="location.href='itemInsert.jsp'">상품 등록</button>					
 				</div>
 			</nav>
 		</div>
