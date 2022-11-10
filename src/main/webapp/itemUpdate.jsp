@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>수정 / 삭제할 상품 보기</title>
+<title>수정할 상품 보기</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -25,61 +25,45 @@
 		String job = request.getParameter("job");
 	%>
 	
-		<div class="m-3">
-			<form action="#" method="post">
+		<div class="m-3" style="width: 1000px; padding: 30px; margin-left: auto; margin-right: auto;">
+			<form action="itemUpdateOK.jsp" method="post">
 				<table class="table table-hover table-bordered">
 					<thead>
 						<tr>
-							<th class="info" colspan="3" style="text-align: left; vertical-align: middle;">
-								<h2>수정 또는 삭제할 상품 보기</h2>
+							<th class="info" colspan="2" style="text-align: center; vertical-align: middle;">
+								<h2>상품 수정</h2>
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td rowspan="6" width="550px;">
-								<img alt="/" src="./images/img02.jpg" style="width: 400px;">
-							</td>
-						</tr>
-						<tr>
-							<th width="200px">상품명</th>
-							<td width="650px">
-								${vo.itemName}
-							</td>
-						</tr>
-						<tr>
-							<th>카테고리</th>
+							<th style="text-align: center; width: 150px; vertical-align: middle;">상품명</th>
 							<td>
-								${vo.category}
+								<input class="form-control" type="text" placeholder="상품명을 입력해주세요." name="itemName" value="${vo.itemName}">
 							</td>
 						</tr>
 						<tr>
-							<th>가격</th>
+							<th style="text-align: center; width: 150px; vertical-align: middle;">원가</th>
 							<td>
-								${vo.itemPrice}
+								<input class="form-control" type="text" placeholder="원가를 입력해주세요." value="${vo.itemPrice}" name="itemPrice" width="600px;" >
 							</td>
-						</tr>
+						</tr>				
 						<tr>
-							<th>판매 편의점</th>
+							<th style="text-align: center; width: 150px; vertical-align: middle;">카테고리</th>
 							<td>
-								(미정)
+								<select class="form-select" name="category">
+									<option>과자</option>
+									<option>음료</option>
+									<option>즉석식품</option>
+									<option>생필품</option>
+								</select>
 							</td>
 						</tr>
 						<tr>
-							<th>행사</th>
-							<td>
-								(미정)
+							<td colspan="2" align="center">
+								<input class="btn btn-primary" type="submit" value="수정">
 							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<input class="btn btn-outline-info" type="button" value="수정" onclick="updateOrDelete()"/>
-								<input class="btn btn-outline-info" type="button" value="삭제" onclick="updateOrDelete()"/>
-							</td>
-							<td colspan="1" align="right">
-								<button class="btn btn-outline-secondary" onclick="location.href='itemList.jsp?currentPage=${currentPage}'">돌아가기</button>
-							</td>
-						</tr>
+						</tr>					
 					</tbody>
 				</table>
 				<input type="hidden" name="idx" value="${vo.idx}"/>

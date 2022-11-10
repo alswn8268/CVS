@@ -1,6 +1,3 @@
-<%@page import="com.tjoeun.service.ItemCommentService"%>
-<%@page import="com.tjoeun.vo.ItemCommentList"%>
-<%@page import="com.tjoeun.vo.ItemVO"%>
 <%@page import="com.tjoeun.service.ItemService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -10,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>item Select By Idx</title>
+<title>itemUpdateOK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <script	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -22,23 +19,21 @@
 
 	<%
 		request.setCharacterEncoding("UTF-8");
-		int idx = Integer.parseInt(request.getParameter("idx"));
 		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		String job = request.getParameter("job");
-	
-		ItemService service = ItemService.getInstance();
-		ItemVO vo = service.itemSelectByIdx(idx);
-		
-		request.setAttribute("vo", vo);
-		request.setAttribute("currentPage", currentPage);
-		
-		if (job.equals("itemView")) {
-			ItemCommentList itemCommentList = ItemCommentService.getInstance().selectItemCommentList(idx);
-			request.setAttribute("itemCommentList", itemCommentList);
-		}
-		
-		pageContext.forward(job + ".jsp");
 	%>
+
+	<jsp:useBean id="vo" class="com.tjoeun.vo.ItemVO">
+		<jsp:setProperty property="*" name="vo"/>
+	</jsp:useBean>
+
+	<%
+	ItemService service = ItemService.getInstance();
+	out.println("<script>"); 
+	service.itemUpdate(vo);
+	out.println("alert('" + vo.getIdx() + "번 글을 수정했습니다.')");	
+	out.println("location.href='itemList.jsp?currentPage=" + currentPage +"'");
+	out.println("</script>");
+	%>	 
 
 </body>
 </html>

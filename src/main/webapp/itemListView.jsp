@@ -20,7 +20,7 @@
 		request.setCharacterEncoding("UTF-8");
 	%>
 	<div class="m-3">
-		<button class="btn btn-outline-primary" onclick="location.href='main.jsp'">메인 페이지로</button>
+		<input type="button" class="btn btn-outline-primary" onclick="location.href='main.jsp'" value="메인으로">
 		<table class="table" style="width: 1200px; margin-left: auto; margin-right: auto;">
 			<tr class="table-primary">
 				<th colspan="6" style="font-size: 20px; text-align: center;">모든 상품 보기</th>
@@ -32,34 +32,34 @@
 						<div style="padding: 20px 20px;">
 							<h4>편의점별 보기</h4>	
 							<div>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="CU"> CU</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="GS25"> GS25</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="세븐일레븐"> 세븐일레븐</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="ministop"> ministop</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="이마트24"> 이마트24</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="기타편의점"> 기타 편의점</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="CU" onclick="searchFunction()"> CU</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="GS25" onclick="searchFunction()"> GS25</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="세븐일레븐" onclick="searchFunction()"> 세븐일레븐</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="ministop" onclick="searchFunction()"> ministop</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="이마트24" onclick="searchFunction()"> 이마트24</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="기타편의점" onclick="searchFunction()"> 기타 편의점</span>
 							</div><br/>		
 							<h4>행사별 보기</h4>	
 							<div>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="1+1"> 1+1</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="2+1"> 2+1</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="카드사할인"> 카드사 할인</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="포인트적립"> 포인트 적립</span>							
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="1+1" onclick="searchFunction()"> 1+1</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="2+1" onclick="searchFunction()"> 2+1</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="카드사할인" onclick="searchFunction()"> 카드사 할인</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="포인트적립" onclick="searchFunction()"> 포인트 적립</span>							
 							</div><br/>	
 							<h4>가격별 보기</h4>	
 							<div>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="1000원"> ~ 1,000원</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="5000원"> ~ 5,000원</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="10000원"> ~ 10,000원</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="50000원"> ~ 50,000원</span>							
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="기타가격"> 기타</span>							
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="1000원" onclick="searchFunction()"> ~ 1,000원</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="5000원" onclick="searchFunction()"> ~ 5,000원</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="10000원" onclick="searchFunction()"> ~ 10,000원</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="50000원" onclick="searchFunction()"> ~ 50,000원</span>							
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="기타가격" onclick="searchFunction()"> 기타</span>							
 							</div><br/>	
 							<h4>카테고리별 보기</h4>	
 							<div>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="과자"> 과자</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="음료"> 음료</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="라면"> 라면</span>
-								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="생필품"> 생필품</span>							
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="과자" onclick="searchFunction()"> 과자</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="음료" onclick="searchFunction()"> 음료</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="라면" onclick="searchFunction()"> 라면</span>
+								<span style="padding: 10px;"><input class="form-check-input" type="checkbox" value="생필품" onclick="searchFunction()"> 생필품</span>							
 							</div>			
 						</div>
 					</div>
@@ -100,7 +100,7 @@
 							${vo.idx}
 						</td>
 						<td align="center">
-							${vo.sellCVS} (미정)
+							${vo.sellCVS}
 						</td>					
 						<td align="center">
 							${vo.category}
@@ -112,11 +112,13 @@
 							${vo.itemPrice}
 						</td>					
 						<td align="center">
-							${vo.eventType} (미정)
+							${vo.eventType}
 						</td>					
 					</tr>
 				</c:forEach>
 			</c:if>
+			
+			
 			<tr>
 				<td colspan="4">&nbsp;</td>
 				<td colspan="1">
@@ -143,7 +145,7 @@
 					<button class="btn btn-outline-primary" title=" 10페이지 앞으로 이동합니다." onclick="location.href='?currentPage=${itemList.startPage-1}'">＜</button>							
 				</c:if>
 				<c:if test="${itemList.startPage <= 1}">
-					<button class="btn btn-outline-secondary" disabled title="첫 10페이지입니다.">＜</button>&nbsp;&nbsp;						
+					<button class="btn btn-outline-secondary" disabled title="첫 10페이지입니다.">＜</button>				
 				</c:if>
 												
 				<!-- 페이지 선택 -->

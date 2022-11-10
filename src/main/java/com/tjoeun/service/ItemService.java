@@ -21,11 +21,11 @@ public class ItemService {
 	}
 	
 	// itemInsertOK.jsp에서 호출되는, 메인글이 저장된 객체를 넘겨받고 mapper를 얻어온 후 메인글을 저장하는 ItemDAO 클래스의 insert sql 명령을 실행하는 메소드를 호출하는 메소드 
-	public void insert(ItemVO vo) {
-		System.out.println("ItemService의 insert()");
+	public void itemInsert(ItemVO vo) {
+		System.out.println("ItemService의 itemInsert()");
 		SqlSession mapper = MySession.getSession();
 		
-		ItemDAO.getInstance().insert(mapper, vo);
+		ItemDAO.getInstance().itemInsert(mapper, vo);
 		
 		mapper.commit();
 		mapper.close();
@@ -86,6 +86,28 @@ public class ItemService {
 		mapper.commit();
 		mapper.close();
 	}
+	
+	// itemUpdate.jsp에서 호출되는, 메인글을 수정할 정보가 저장된 객체를 넘겨 받고 mapper를 얻어온 후 메인글 1건을 수정하는 ItemDAO 클래스의 update sql 명령을 실행하는 메소드를 호출하는 메소드
+	public void itemUpdate(ItemVO vo) {
+		System.out.println("ItemService의 itemUpdate()");
+		SqlSession mapper = MySession.getSession();
+		
+		ItemDAO.getInstance().itemUpdate(mapper, vo);
+		
+		mapper.commit();
+		mapper.close();
+	}
+	
+	public void itemDelete(int idx) {
+		System.out.println("ItemService의 itemDelete()");
+		SqlSession mapper = MySession.getSession();
+		
+		ItemDAO.getInstance().itemDelete(mapper, idx);
+		
+		mapper.commit();
+		mapper.close();
+	}
+	
 	
 }
 

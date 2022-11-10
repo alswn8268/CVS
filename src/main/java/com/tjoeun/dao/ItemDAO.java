@@ -18,9 +18,9 @@ public class ItemDAO {
 	}
 	
 	// ItemService 클래스에서 호출되는, mapper와 메인글이 저장된 객체를 넘겨받고, item.xml 파일의 insert.sql 명령을 실행하는 메소드
-	public void insert(SqlSession mapper, ItemVO vo) {
-		System.out.println("ItemDAO 클래스의 insert() 메소드 실행");
-		mapper.insert("insert", vo);			
+	public void itemInsert(SqlSession mapper, ItemVO vo) {
+		System.out.println("ItemDAO 클래스의 itemInsert() 메소드 실행");
+		mapper.insert("itemInsert", vo);			
 	}
 	
 	// ItemService 클래스에서 호출되는, mapper를 넘겨 받고 모든 상품을 얻어오는 item.xml 파일의 select sql 명령을 실행하는 메소드
@@ -51,6 +51,16 @@ public class ItemDAO {
 	public void itemIncrement(SqlSession mapper, int idx) {
 		System.out.println("ItemDAO의 increment() 메소드 실행");
 		mapper.update("itemIncrement", idx);	
+	}
+	
+	public void itemUpdate(SqlSession mapper, ItemVO vo) {
+		System.out.println("ItemDAO의 itemUpdate() 메소드 실행");
+		mapper.update("itemUpdate", vo);
+	}
+	
+	public void itemDelete(SqlSession mapper, int idx) {
+		System.out.println("ItemDAO의 itemDelete() 메소드 실행");
+		mapper.delete("itemDelete", idx);		
 	}
 	
 }
